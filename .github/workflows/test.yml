@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - test**
+      - test/**
   pull_request:
 
 jobs:
@@ -30,6 +31,8 @@ jobs:
         uses: icrawl/action-tsc@v1
       - name: setup
         run: node dist/bin/setup.js
+      - name: start
+        run: node dist/src/index.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
