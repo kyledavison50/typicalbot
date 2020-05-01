@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - test**
+  pull_request:
+
+jobs:
+  node12:
+    name: node v12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install build tools
+        run: sudo apt-get install libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev -y
+      - name: install rethinkdb
+        run: source /etc/lsb-release && echo "deb https://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list && wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add - && sudo apt-get update && sudo apt-get install rethinkdb -y
+      - name: start rethinkdb
+        run: rethinkdb
+      - name: install dependencies (with yarn)
+        run: yarn install
+      - name: copy example config
+        run: cp etc/config.example.json etc/config.json
+      - name: build
+        uses: icrawl/action-tsc@v1
+      - name: setup
+        run: node dist/bin/setup.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        with:
+          job-name: run
