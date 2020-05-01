@@ -45,14 +45,15 @@ jobs:
         run: source /etc/lsb-release && echo "deb https://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list && wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add - && sudo apt-get update && sudo apt-get install rethinkdb -y
       - name: start rethinkdb
         run: rethinkdb --daemon --no-http-admin
+      - name: install dependencies (with yarn)
+        run: yarn install
+      - name: copy example config
+        run: cp etc/config.example.json etc/config.json
       - name: download
         uses: actions/download-artifact@v2
         with:
           name: typicalbot-dist
           path: dist/
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: ./
       - name: setup
         run: node dist/bin/setup.js
       - name: start
