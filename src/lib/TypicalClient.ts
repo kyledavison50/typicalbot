@@ -32,7 +32,7 @@ interface TypicalHandlers {
 export default class Cluster extends Client {
     public node: VezaClient | undefined;
     public config = config;
-    public build = config.build;
+    public build = process.env.BUILD || config.build;
     public shards: number[] = JSON.parse(process.env.SHARDS || '[1]');
     public shardCount = process.env.TOTAL_SHARD_COUNT || '1';
     public cluster = `${process.env.CLUSTER} [${this.shards.join(',')}]`;

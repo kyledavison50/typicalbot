@@ -34,4 +34,6 @@ jobs:
       - name: start
         run: node dist/src/index.js
         env:
+          BUILD: test
+          CLUSTERED: false
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
