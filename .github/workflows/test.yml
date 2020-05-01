@@ -29,10 +29,6 @@ jobs:
         run: cp etc/config.example.json etc/config.json
       - name: build
         uses: icrawl/action-tsc@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          job-name: node12
       - name: setup
         run: node dist/bin/setup.js
       - name: start
