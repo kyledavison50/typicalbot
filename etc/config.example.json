@@ -5,8 +5,8 @@
     "clusterServer": "Primula",
     "clusterBuild": "",
     "nodePort": 4000,
-    "id": "Bot ID",
-    "token": "Bot Token",
+    "id": "",
+    "token": "",
     "apis": {
         "topgg": "",
         "carbonkey": "",
@@ -15,9 +15,9 @@
     },
     "database": {
         "credentials": {
-            "user": "Username",
-            "password": "Password",
-            "db": "Database Name"
+            "user": "admin",
+            "password": "",
+            "db": "typicalbot"
         }
     }
 }
