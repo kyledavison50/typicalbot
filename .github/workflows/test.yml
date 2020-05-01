@@ -28,7 +28,7 @@ jobs:
       - name: copy example config
         run: cp etc/config.example.json etc/config.json
       - name: build
-        uses: icrawl/action-tsc@v1
+        run: yarn run build
       - name: setup
         run: node dist/bin/setup.js
       - name: start
