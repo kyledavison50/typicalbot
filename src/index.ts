@@ -4,7 +4,7 @@ import { Client, ClientSocket, NodeMessage } from 'veza';
 import Cluster from './lib/TypicalClient';
 import config from '../etc/config.json';
 
-const clustered = process.env.CLUSTERED === 'true' ? true : config.clustered;
+const clustered = process.env.CLUSTERED ? process.env.CLUSTERED === 'true' : config.clustered;
 
 if (!clustered) {
     new Cluster(undefined);
