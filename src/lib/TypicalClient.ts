@@ -77,7 +77,7 @@ export default class Cluster extends Client {
 
         this.node = node;
 
-        this.login(this.config.token).catch((err) => Sentry.captureException(err));
+        this.login(process.env.DISCORD_TOKEN ? process.env.DISCORD_TOKEN : this.config.token).catch((err) => Sentry.captureException(err));
     }
 
     public async login(token: string): Promise<string> {
