@@ -1,7 +1,0 @@
-{
-  "DESCRIPTION": "Ocenite matematične izraze.",
-  "USAGE": "matematika <izraz>",
-  "INPUT": "**VNOS:**",
-  "OUTPUT": "**IZPIS:**",
-  "FAILED": "Ocenjevanja matematičnega izraza ni uspelo."
-}

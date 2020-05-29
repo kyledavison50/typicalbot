@@ -1,7 +1,0 @@
-{
-  "DESCRIPTION": "Wertet mathematische Ausdrücke aus.",
-  "USAGE": "math <Ausdruck>",
-  "INPUT": "**EINGABE:**",
-  "OUTPUT": "**AUSGABE:**",
-  "FAILED": "Fehler beim Auswerten des mathematischen Ausdrucks."
-}

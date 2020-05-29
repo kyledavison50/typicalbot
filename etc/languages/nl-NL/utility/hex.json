@@ -1,4 +1,0 @@
-{
-  "DESCRIPTION": "Geeft een voorbeeld van een gegeven hex kleur.",
-  "USAGE": "hex <hex-kleur:0-9a-fA-F>"
-}

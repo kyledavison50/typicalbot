@@ -1,6 +1,0 @@
-{
-	"DESCRIPTION": "Lấy đường dẫn đến tài liệu TypicalBot.",
-	"USAGE": "tài liệu",
-	"TEXT": "Tài liệu cho tất cả câu lệnh và cài đặt có thể xem ở **<{{link}}>**.",
-	"TYPICAL_DOCS": "Tài liệu TypicalBot"
-}
