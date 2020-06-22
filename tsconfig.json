@@ -21,12 +21,12 @@
         "incremental": true,
         "noEmitHelpers": true,
         "importHelpers": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     },
-    "exclude": [
-        "node_modules"
-    ],
     "include": [
-        "**/*.ts"
+        "./**/*.ts",
+        "./**/*.json"
     ]
 }
